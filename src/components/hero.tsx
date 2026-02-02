@@ -18,7 +18,7 @@ export function Hero() {
                     className="lg:col-span-8 flex flex-col justify-between p-10 md:p-16 rounded-[3.5rem] bg-card border border-border relative overflow-hidden group"
                 >
                     {/* Dynamic Background Glow */}
-                    <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-primary/5 blur-[120px] group-hover:bg-primary/10 transition-colors duration-1000" />
+                    <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-primary/5 blur-[64px] group-hover:bg-primary/10 transition-colors duration-1000 will-change-[filter,background-color]" />
 
                     <div className="relative z-10">
                         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] mb-16 shadow-xl">
@@ -44,7 +44,7 @@ export function Hero() {
                             <motion.button
                                 whileHover={{ scale: 1.05, rotate: -1 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-12 py-7 bg-primary text-black font-black uppercase italic tracking-tighter text-2xl rounded-full flex items-center gap-4 transition-all shadow-[0_20px_50px_rgba(0,242,255,0.3)]"
+                                className="px-12 py-7 bg-primary text-black font-black uppercase italic tracking-tighter text-2xl rounded-full flex items-center gap-4 transition-all shadow-[0_20px_50px_rgba(0,242,255,0.3)] will-change-transform"
                             >
                                 Initiate Project <ChevronRight className="w-8 h-8" />
                             </motion.button>
@@ -63,8 +63,8 @@ export function Hero() {
 
                     {/* Stats or Badges */}
                     <div className="absolute top-12 right-12 hidden md:flex flex-col gap-3 items-end opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-                        <div className="bg-border/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Next.js 15 PRORITIZED</div>
-                        <div className="bg-border/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest">TS EXPERT LEVEL</div>
+                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Next.js 15 PRORITIZED</div>
+                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest">TS EXPERT LEVEL</div>
                     </div>
                 </motion.div>
 
@@ -75,8 +75,8 @@ export function Hero() {
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="lg:col-span-4 relative group"
                 >
-                    <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full group-hover:bg-primary/40 transition-all duration-700" />
-                    <div className="relative h-full min-h-[600px] rounded-[3.5rem] overflow-hidden border border-border group-hover:border-primary/50 transition-colors">
+                    <div className="absolute inset-0 bg-primary/20 blur-[48px] rounded-full group-hover:bg-primary/40 transition-all duration-700 will-change-[filter,background-color]" />
+                    <div className="relative h-full min-h-[600px] rounded-[3.5rem] overflow-hidden border border-border group-hover:border-primary/50 transition-colors will-change-transform">
                         <Image
                             src="/my-profile.png"
                             alt="Profile"

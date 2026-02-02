@@ -75,11 +75,11 @@ export function ProjectShowcase() {
                     {projects.map((project, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: i * 0.1 }}
-                            className={`group cursor-pointer ${project.status === 'coming-soon' ? 'pointer-events-none' : ''}`}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.6, delay: i * 0.05 }}
+                            className={`group cursor-pointer will-change-transform ${project.status === 'coming-soon' ? 'pointer-events-none' : ''}`}
                         >
                             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] mb-6">
                                 <Image
@@ -90,8 +90,8 @@ export function ProjectShowcase() {
                                 />
 
                                 {project.status === 'coming-soon' && (
-                                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px]">
-                                        <div className="px-6 py-2 border-2 border-white/20 bg-black/60 rounded-full">
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                                        <div className="px-6 py-2 border-2 border-white/20 bg-black/80 rounded-full">
                                             <span className="text-white text-xs font-black uppercase tracking-[0.3em]">Coming Soon</span>
                                         </div>
                                     </div>

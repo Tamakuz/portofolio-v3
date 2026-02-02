@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { useEffect } from "react";
+import { motion, useScroll, useSpring, useMotionValue } from "framer-motion";
 import { Hero } from "@/components/hero";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { Expertise } from "@/components/expertise";
@@ -10,7 +10,9 @@ import { HorizontalSection } from "@/components/horizontal-section";
 import { Mail } from "lucide-react";
 
 export default function Home() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -20,11 +22,12 @@ export default function Home() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
+      mouseX.set(e.clientX - 10);
+      mouseY.set(e.clientY - 10);
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
     <main className="dark selection:bg-primary selection:text-black">
@@ -33,9 +36,9 @@ export default function Home() {
 
       {/* Custom Cursor */}
       <motion.div
-        className="custom-cursor hidden lg:block"
-        animate={{ x: mousePos.x - 10, y: mousePos.y - 10 }}
-        transition={{ type: "spring", damping: 20, stiffness: 250, mass: 0.5 }}
+        className="custom-cursor hidden lg:block pointer-events-none will-change-transform"
+        style={{ x: mouseX, y: mouseY }}
+        transition={{ type: "spring", damping: 30, stiffness: 200, mass: 0.5 }}
       />
 
       {/* Progress Bar */}

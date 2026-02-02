@@ -51,7 +51,7 @@ export function Expertise() {
                         <motion.div
                             key={i}
                             whileHover={{ y: -5, borderColor: "var(--color-primary)" }}
-                            className="group p-8 rounded-3xl bg-card border border-border flex flex-col items-center justify-center gap-4 transition-all"
+                            className="group p-8 rounded-3xl bg-card border border-border flex flex-col items-center justify-center gap-4 transition-all will-change-transform"
                         >
                             <item.Icon className="w-10 h-10 group-hover:text-primary transition-colors duration-500" />
                             <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground group-hover:text-white transition-colors">
@@ -63,10 +63,10 @@ export function Expertise() {
 
                 {/* Custom Marquee for "Vibe" or Dynamic Content */}
                 <div className="border-y border-border py-12 overflow-hidden rotate-[-2deg] bg-primary text-black font-black text-4xl whitespace-nowrap marquee-container">
-                    <div className="marquee-content">
+                    <div className="marquee-content will-change-transform">
                         <span>CLEAN CODE • OPTIMIZED SEO • PURE JAVASCRIPT • SCALABLE ARCHITECTURES • MODERN UI • RESPONSIVE DESIGN •</span>
                     </div>
-                    <div className="marquee-content" aria-hidden="true">
+                    <div className="marquee-content will-change-transform" aria-hidden="true">
                         <span>CLEAN CODE • OPTIMIZED SEO • PURE JAVASCRIPT • SCALABLE ARCHITECTURES • MODERN UI • RESPONSIVE DESIGN •</span>
                     </div>
                 </div>
