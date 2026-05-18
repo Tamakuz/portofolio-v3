@@ -22,11 +22,13 @@ export default function Home() {
   });
 
   useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX - 10);
       mouseY.set(e.clientY - 10);
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
@@ -102,7 +104,7 @@ export default function Home() {
       </section>
 
       <footer className="py-8 px-6 text-[10px] font-black uppercase tracking-[0.5em] text-center text-muted-foreground bg-black overflow-hidden whitespace-nowrap">
-        DESIGNED FOR THE BOLD • ENGINEERED FOR THE FUTURE • © 2026 JOVAN • BUILT WITH NEXT.JS 15 •
+        DESIGNED FOR THE BOLD • ENGINEERED FOR THE FUTURE • © 2026 JOVAN • BUILT WITH NEXT.JS 16 •
       </footer>
     </main>
   );

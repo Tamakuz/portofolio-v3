@@ -12,13 +12,13 @@ export function Hero() {
 
                 {/* Intro Card */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                     className="lg:col-span-8 flex flex-col justify-between p-10 md:p-16 rounded-[3.5rem] bg-card border border-border relative overflow-hidden group"
                 >
                     {/* Dynamic Background Glow */}
-                    <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-primary/5 blur-[64px] group-hover:bg-primary/10 transition-colors duration-1000 will-change-[filter,background-color]" />
+                    <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-primary/5 blur-[32px] md:blur-[64px] group-hover:bg-primary/10 transition-colors duration-1000" />
 
                     <div className="relative z-10">
                         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] mb-16 shadow-xl">
@@ -29,7 +29,7 @@ export function Hero() {
                             Mastering the Digital Realm
                         </div>
 
-                        <h1 className="text-7xl md:text-[11rem] font-black leading-[0.75] tracking-tighter mb-12 italic">
+                        <h1 className="text-6xl sm:text-7xl md:text-[11rem] font-black leading-[0.75] tracking-tighter mb-12 italic">
                             FULLSTACK <br />
                             <span className="text-stroke">ALCHEMIST</span>
                         </h1>
@@ -63,26 +63,27 @@ export function Hero() {
 
                     {/* Stats or Badges */}
                     <div className="absolute top-12 right-12 hidden md:flex flex-col gap-3 items-end opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Next.js 15 PRORITIZED</div>
+                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Next.js 16 PRIORITIZED</div>
                         <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest">TS EXPERT LEVEL</div>
                     </div>
                 </motion.div>
 
                 {/* Profile Card */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.96 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.45, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
                     className="lg:col-span-4 relative group"
                 >
-                    <div className="absolute inset-0 bg-primary/20 blur-[48px] rounded-full group-hover:bg-primary/40 transition-all duration-700 will-change-[filter,background-color]" />
+                    <div className="absolute inset-0 bg-primary/20 blur-[24px] md:blur-[48px] rounded-full group-hover:bg-primary/40 transition-colors duration-700" />
                     <div className="relative h-full min-h-[600px] rounded-[3.5rem] overflow-hidden border border-border group-hover:border-primary/50 transition-colors will-change-transform">
                         <Image
-                            src="/my-profile-v2.jpg"
+                            src="/my-profile-v2.webp"
                             alt="Jovan Panji Pratama, full-stack web developer from Indonesia"
                             fill
                             priority
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                            sizes="(max-width: 1023px) 100vw, 33vw"
+                            className="object-cover grayscale hover:grayscale-0 transition-transform duration-700 scale-105 group-hover:scale-100"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                         <div className="absolute bottom-0 left-0 right-0 p-12">
