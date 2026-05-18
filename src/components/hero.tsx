@@ -79,7 +79,7 @@ export function Hero() {
                     <div className="relative h-full min-h-[600px] rounded-[3.5rem] overflow-hidden border border-border group-hover:border-primary/50 transition-colors will-change-transform">
                         <Image
                             src="/my-profile.png"
-                            alt="Profile"
+                            alt="Jovan Panji Pratama, full-stack web developer from Indonesia"
                             fill
                             priority
                             className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"

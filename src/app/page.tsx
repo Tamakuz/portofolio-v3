@@ -8,6 +8,7 @@ import { Expertise } from "@/components/expertise";
 import { About } from "@/components/about";
 import { HorizontalSection } from "@/components/horizontal-section";
 import { Mail } from "lucide-react";
+import { JsonLd } from "./json-ld";
 
 export default function Home() {
   const mouseX = useMotionValue(0);
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <main className="dark selection:bg-primary selection:text-black">
+      <JsonLd />
       {/* Noise Texture Overaly */}
       <div className="noise" />
 
